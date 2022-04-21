@@ -28,4 +28,8 @@
 - Sync folder on host with container folder so that changes in host reflect immediately in container without having to rebuild image and stop/start container
 - Map the absolute path on host to WORKDIR path on container
 - (Use nodemon)
-- Add another (anonymous) volume for the node_modules folder. For this, we do not specify a path on the host. This will be mapped to a folder managed by docker.  
+- Add another (anonymous) volume for the node_modules folder. For this, we do not specify a path on the host. This will be mapped to a folder managed by docker.
+
+#### Docker compose
+- Keeping track of multiple container configs (port mappings, volumes, container names etc...)
+- So, instead of running multiple commands, we can define configs and run one command to apply them
