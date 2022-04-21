@@ -16,10 +16,15 @@
 - Delete container:         docker container rm <contaier_name>  
 - Delete errthang:          docker system prune -a             // removes all images, containers, volumes  
 - Attach volume:            docker run --name <container_name> -p 5000:4000 -rm -v <host_abs_path_to_folder>:<container_wkdir_path> <image_id/repo_name>  
-- Attach anon. volume:      docker run --name <container_name> -p 5000:4000 -rm -v <host_abs_path_to_folder>:<container_wkdir_path> -v <container_wkdir_path/node_modules> <image_id/repo_name> // more specific for node_modules
+- Attach anon. volume:      docker run --name <container_name> -p 5000:4000 -rm -v <host_abs_path_to_folder>:<container_wkdir_path> -v <container_wkdir_path/node_modules> <image_id/repo_name> // more specific for node_modules  
+- Apply/Run docker-compose: docker-compose up  
+- Stop containers:          docker-compose down  
+- Stop containers + imgs + vols:          docker-compose down --rmi all -v 
 
 #### Flags
 - -p: PUBLISH:             for port mapping <localhost_port>:<local_port>  
 - -d: DETACHED MODE:       detach the terminal from the process  
 - --rm: REMOVE:            run container but remove it when stopped. Dont store it  
-- -v: VOLUME:              add a volume to the container <host_abs_path>:<container_wkdir_path>
+- -v: VOLUME:              add a volume to the container <host_abs_path>:<container_wkdir_path>  
+- --rmi: REMOVE IMAGE:     run docker-compose down and remove all images  
+- -v: REMOVE VOLUMES:      run docker-compose down and remove all attached volumes  

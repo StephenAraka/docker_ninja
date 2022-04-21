@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  api:
+    # doesnt have to be same name as folder - just doing it for clarity
+    build: ./api # folder to build image 
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./api:./app # hostPath:containerPath (relative)
+      - ./app/node_modules # anon volume
