@@ -7,8 +7,8 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      - ./api:./app # hostPath:containerPath (relative)
-      - ./app/node_modules # anon volume
+      - ./api:/app # hostPath:containerPath (relative)
+      - /app/node_modules # anon volume
   myblog:
     build: ./myblog # folder to build image 
     container_name: myblog_c
